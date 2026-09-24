@@ -1,9 +1,8 @@
 const ClienteService = require("../services/ClienteService");
 
 // Teste unitario: o service e testado em isolamento total.
-// O repository e substituido por um mock (jest.fn()), assim testamos so a
-// logica do service, sem depender de dados reais.
-//
+// O repository e substituido por um mock (jest.fn()), assim testamos so a logica do service, sem depender de dados reais.
+
 // Abaixo ha 1 teste pronto (listar) como referencia de estilo.
 // Os demais estao como test.todo — implemente cada um seguindo o ENUNCIADO-02-CLIENTES.md.
 
