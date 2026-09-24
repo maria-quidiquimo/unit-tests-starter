@@ -169,7 +169,7 @@ describe('API /clientes (integracao com supertest)', () => {
       expect(res.status).toBe(404)
     });
 
-    test.todo('retorna 404 quando o cliente nao existe', async () => {
+    test('retorna 404 quando o cliente nao existe', async () => {
       const res = await request(app).delete('/cliente/999')
 
       expect(res.status).toBe(404)
