@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test"
 
 test.describe('Testes E2E - Clientes', () => {
     test.beforeEach(async ({ page, request}) => {
-        const resposta = await request.post('http://localhost:3000/__reset")')
+        const resposta = await request.post('http://localhost:3000/__reset')
         expect(resposta.status().toBe(204));
 
         await page.goto('/')
