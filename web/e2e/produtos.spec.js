@@ -2,7 +2,7 @@ import {test, expect} from "@playwright/test"
 
 test.beforeEach(async ({page, request}) => {
     const resposta = await request.post("http://localhost:3000/__reset")
-    expect(resposta.status().toBe(204));
+    expect(resposta.status()).toBe(204);
     await page.goto("/"); //abrindo o navegador padrão
 })
 
