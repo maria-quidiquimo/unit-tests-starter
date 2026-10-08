@@ -102,6 +102,6 @@ test.describe('Teste E2E - Pedidos', () => {
         await linhaPedido1.getByRole("button", { name: "Remover" }).click();
 
         await expect(linhaPedido1).toHaveCount(0);
-        await expect(page.getByRole("row")).toHaveCount(1); // Somente o cabeçalho[cite: 11]
+        await expect(page.getByRole("row")).toHaveCount(1);
     });
 })

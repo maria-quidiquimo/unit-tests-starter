@@ -177,7 +177,7 @@ Call log:
       |                                                                     ^ Error: locator.click: Test timeout of 30000ms exceeded.
   103 | 
   104 |         await expect(linhaPedido1).toHaveCount(0);
-  105 |         await expect(page.getByRole("row")).toHaveCount(1); // Somente o cabeçalho[cite: 11]
+  105 |         await expect(page.getByRole("row")).toHaveCount(1);
   106 |     });
   107 | })
 ```

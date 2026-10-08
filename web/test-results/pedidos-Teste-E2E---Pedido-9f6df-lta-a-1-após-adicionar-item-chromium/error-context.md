@@ -139,7 +139,7 @@ Call log:
   102 |         await linhaPedido1.getByRole("button", { name: "Remover" }).click();
   103 | 
   104 |         await expect(linhaPedido1).toHaveCount(0);
-  105 |         await expect(page.getByRole("row")).toHaveCount(1); // Somente o cabeçalho[cite: 11]
+  105 |         await expect(page.getByRole("row")).toHaveCount(1);
   106 |     });
   107 | })
 ```

@@ -35,13 +35,13 @@ test.describe('Testes E2E - Clientes', () => {
         await page.getByRole('button', {name: "Cadastrar"}).click()
 
         await expect(page.locator("p.erro")).toHaveText("Nome e email sao obrigatorios")
-        await expect(page.getByRole("row").toHaveCount(3))
+        await expect(page.getByRole("row")).toHaveCount(3);
     });
 
     test('C4: Impedir email duplicado', async ({page}) => {
         await page.getByLabel("Nome").fill("Teste")
         await page.getByLabel("Email").fill("ana@email.com")
-        await getByRole("button", {name: "Cadastrar"}).click()
+        await page.getByRole("button", {name: "Cadastrar"}).click()
 
         await expect(page.locator('p.erro')).toHaveText("Email ja cadastrado")
         await expect(page.getByRole('row')).toHaveCount(3)

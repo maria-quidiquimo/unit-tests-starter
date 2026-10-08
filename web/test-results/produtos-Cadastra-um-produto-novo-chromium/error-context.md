@@ -12,7 +12,27 @@
 # Error details
 
 ```
-TypeError: resposta.status(...).toBe is not a function
+Error: expect(locator).toContainText(expected) failed
+
+Locator: getByRole('row', { name: /Kibe/ })
+Expected substring: "R$7,00"
+Received string:    "KibeR$ 7,00Remover"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toContainText" getByRole('row', { name: /Kibe/ }) with timeout 5000ms
+  - waiting for getByRole('row', { name: /Kibe/ })
+    14 × locator resolved to <tr>…</tr>
+       - unexpected value "KibeR$ 7,00Remover"
+
+```
+
+```yaml
+- row "Kibe R$ 7,00 Remover":
+  - cell "Kibe"
+  - cell "R$ 7,00"
+  - cell "Remover":
+    - button "Remover"
 ```
 
 # Test source
@@ -22,8 +42,7 @@ TypeError: resposta.status(...).toBe is not a function
   2  | 
   3  | test.beforeEach(async ({page, request}) => {
   4  |     const resposta = await request.post("http://localhost:3000/__reset")
-> 5  |     expect(resposta.status().toBe(204));
-     |                              ^ TypeError: resposta.status(...).toBe is not a function
+  5  |     expect(resposta.status()).toBe(204);
   6  |     await page.goto("/"); //abrindo o navegador padrão
   7  | })
   8  | 
@@ -40,7 +59,8 @@ TypeError: resposta.status(...).toBe is not a function
   19 | 
   20 |     const linha = page.getByRole("row", {name: /Kibe/})
   21 |     await expect(linha).toBeVisible()
-  22 |     await expect(linha).toContainText("R$7,00")
+> 22 |     await expect(linha).toContainText("R$7,00")
+     |                         ^ Error: expect(locator).toContainText(expected) failed
   23 | })
   24 | 
   25 | test("Mostra erro ao cadastrar sem preenchimento", async ({page}) => {
